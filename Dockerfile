@@ -15,6 +15,3 @@ RUN apt-get update && \
         python3-pip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-# Return to non-root user
-USER node
