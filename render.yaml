@@ -29,21 +29,21 @@ services:
       - key: DB_TYPE
         value: postgresdb
       - key: DB_POSTGRESDB_DATABASE
-        value: n8n_db_3tw6
+        fromDatabase:
+          name: n8n-db
+          property: database
       - key: DB_POSTGRESDB_HOST
-        value: dpg-d1jlo2m3jp1c73ee5bng-a
-      - key: DB_POSTGRESDB_USER
-        value: n8n_db_3tw6_user
+        fromDatabase:
+          name: n8n-db
+          property: host
       - key: DB_POSTGRESDB_PASSWORD
-        value: Te2jRqjIh7Ams5faED9vluL2ivZY58dw
-      - key: N8N_EDITOR_BASE_URL
-        value: https://n8n-service-i32d.onrender.com
-      - key: N8N_HOST
-        value: n8n-service-i32d.onrender.com
-      - key: WEBHOOK_URL
-        value: https://n8n-service-i32d.onrender.com
-      - key: N8N_ENCRYPTION_KEY
-        value: 5jdmJV7a36CRgmQbqDZz4CDF0N1lMqKD3vHh+/YAzko=
+        fromDatabase:
+          name: n8n-db
+          property: password
+      - key: DB_POSTGRESDB_USER
+        fromDatabase:
+          name: n8n-db
+          property: user
 
 databases:
   - name: n8n-db
